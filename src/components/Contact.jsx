@@ -45,11 +45,11 @@ export default function Confirmation() {
             <div className="form-step">
                 <div className="input-group">
                     <label>Email</label>
-                    <input onChange={(e) => setEmail(e.target.value)} type="email"></input>
+                    <input onChange={(e) => setEmail(e.target.value)} type="email" required></input>
                 </div>
                 <div className="input-group">
                     <label>Phone Number</label>
-                    <input type="text" onChange={(e) => setPhone(e.target.value)}></input>
+                    <input type="text" onChange={(e) => setPhone(e.target.value)} required={true}></input>
                 </div>
                 <div className="input-group">
                     <p>Select your Language</p>

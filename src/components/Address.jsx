@@ -47,11 +47,11 @@ export default function Address() {
             <div className="form-step">
                 <div className="input-group">
                     <label>City</label>
-                    <input onChange={(e) => setCity(e.target.value)} type="text"></input>
+                    <input onChange={(e) => setCity(e.target.value)} type="text" required></input>
                 </div>
                 <div className="input-group">
                     <label>State</label>
-                    <input type="text" onChange={(e) => setState(e.target.value)}></input>
+                    <input type="text" onChange={(e) => setState(e.target.value)} required></input>
                 </div>
                 <div className="input-group">
                     <p>Select your Nationality</p>
@@ -66,7 +66,7 @@ export default function Address() {
                 </div>
                 <div className="input-group">
                     <label>Postal Code</label>
-                    <input type="text" onChange={(e) => setPostalCode(e.target.value)}></input>
+                    <input type="text" onChange={(e) => setPostalCode(e.target.value)}  required></input>
                 </div>
                 <div className="btns-group">
                     <button onClick={() => handlePrev()} className="btn btn-prev" type="submit">Previous</button>

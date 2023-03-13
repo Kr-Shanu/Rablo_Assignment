@@ -11,7 +11,7 @@ function Success () {
     })
 
     return (
-        <div className="success-box">
+        <div className="form">
             <h1>Your inputs are recorded as below</h1>
             <p>First Name: <b>{data.f_name}</b></p>
             <p>Last Name: <b>{data.l_name}</b></p>

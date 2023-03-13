@@ -41,7 +41,7 @@ export default function Intro() {
             <div className="form-step">
                 <div className="input-group">
                     <label>First Name</label>
-                    <input onChange={(e) => {setFName(e.target.value);}} type="text"></input>
+                    <input onChange={(e) => {setFName(e.target.value);}} type="text" required autoFocus></input>
                 </div>
                 <div className="input-group">
                     <label>Last Name</label>
@@ -60,7 +60,7 @@ export default function Intro() {
                 </div>
                 <div className="input-group">
                     <label>Date of Birth</label>
-                    <input onChange={(e) => setDob(e.target.value)} type="date"></input>
+                    <input onChange={(e) => setDob(e.target.value)} type="date" required></input>
                 </div>
                 <div>
                     <button onClick={() => handleSubmit()} className="btn width-50 ml-auto" type="submit">Next</button>
