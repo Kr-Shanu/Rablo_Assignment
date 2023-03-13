@@ -39,7 +39,7 @@ const userSlice = createSlice({
             return { ...state, country:action.payload}
         },
         changePostalCode(state, action) {
-            return { ...state, fpostalCode:action.payload}
+            return { ...state, postalCode:action.payload}
         },
         changeEmail(state, action) {
             return { ...state, email:action.payload}

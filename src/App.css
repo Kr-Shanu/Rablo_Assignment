@@ -110,3 +110,8 @@ input {
 .btn:hover {
   box-shadow: 0 0 0 2px #ffff, 0 0 0 3px rgb(11, 78, 180);
 }
+
+.success-box {
+  padding: 5%;
+  border: 2px solid #ccc;
+}
