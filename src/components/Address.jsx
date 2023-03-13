@@ -1,13 +1,30 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import ProgressBar from "./ProgressBar";
+import { useState } from "react";
 
 export default function Address() {
 
     const navigate = useNavigate();
 
+    const [city, setCity] = useState(null);
+    const [state, setState] = useState(null);
+    const [nationality, setNationality] = useState(null);
+    const [postalCode, setPostalCode] = useState(null);
+
+
+    useEffect(() => {
+
+        console.log("city: ", city);
+        console.log("state: ", state);
+        console.log("nationality: ", nationality);
+        console.log("postalCode: ", postalCode);
+
+    }, [city, state, nationality, postalCode])
+
+
     function handleNext() {
-        navigate('/occupation');
+        navigate('/contact');
     }
 
     function handlePrev() {
@@ -20,12 +37,27 @@ export default function Address() {
             <ProgressBar value="2"/>
             <div className="form-step">
                 <div className="input-group">
-                    <label>Address</label>
-                    <input type="text" name="address" id="address"></input>
+                    <label>City</label>
+                    <input onChange={(e) => setCity(e.target.value)} type="text"></input>
                 </div>
                 <div className="input-group">
-                    <label>Position</label>
-                    <input type="text" name="position" id="position"></input>
+                    <label>State</label>
+                    <input type="text" onChange={(e) => setState(e.target.value)}></input>
+                </div>
+                <div className="input-group">
+                    <p>Select your Nationality</p>
+                    <div className="radio-grp">
+                        <input name="nationality" id="indian" type="radio" onClick={() => setNationality("Indian")}></input>
+                        <label>Indian</label>
+                    </div>
+                    <div className="radio-grp">
+                        <input name="nationality" id="foreigner" type="radio" onClick={() => setNationality("Foreigner")}></input>
+                        <label>Foreigner</label>
+                    </div>
+                </div>
+                <div className="input-group">
+                    <label>Postal Code</label>
+                    <input type="text" onChange={(e) => setPostalCode(e.target.value)}></input>
                 </div>
                 <div className="btns-group">
                     <button onClick={() => handlePrev()} className="btn btn-prev" type="submit">Previous</button>
