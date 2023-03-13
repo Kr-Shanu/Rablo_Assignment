@@ -1,11 +1,15 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import ProgressBar from "./ProgressBar";
-import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { changeCity, changeState, changeCountry, changePostalCode } from "../store/slices/UserSlice";
 
 export default function Address() {
 
+    console.log("state name are: ", );
+
     const navigate = useNavigate();
+    const dispatch = useDispatch();
 
     const [city, setCity] = useState(null);
     const [state, setState] = useState(null);
@@ -24,6 +28,11 @@ export default function Address() {
 
 
     function handleNext() {
+
+        dispatch(changeCity(city));
+        dispatch(changeState(state));
+        dispatch(changeCountry(nationality));
+        dispatch(changePostalCode(postalCode));
         navigate('/contact');
     }
 

@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import ProgressBar from "./ProgressBar";
+import { useDispatch } from "react-redux";
+import  { changeEmail, changePhone, changeLanguage, changeOccupation } from '../store/slices/UserSlice';
 
 export default function Confirmation() {
 
     const navigate = useNavigate();
+    const dispatch = useDispatch();
 
     const [email, setEmail] = useState(null);
     const [phone, setPhone] = useState(null);
@@ -20,8 +23,14 @@ export default function Confirmation() {
 
     }, [email, phone, language, occupation])
 
-    function handleNext(e) {
-        e.preventDefault();
+    function handleSubmit(e) {
+
+        dispatch(changeEmail(email));
+        dispatch(changePhone(phone));
+        dispatch(changeLanguage(language));
+        dispatch(changeOccupation(occupation));
+        navigate('/success');
+        // e.preventDefault();
         // navigate('/final');
     }
 
@@ -59,7 +68,7 @@ export default function Confirmation() {
                 </div>
                 <div className="btns-group">
                     <button onClick={() => handlePrev()} className="btn btn-prev" type="submit">Previous</button>
-                    <button onClick={() => handleNext()} className="btn btn-next" type="submit">Submit</button>
+                    <button onClick={() => handleSubmit()} className="btn btn-next" type="submit">Submit</button>
                 </div>
             </div>
         </form>

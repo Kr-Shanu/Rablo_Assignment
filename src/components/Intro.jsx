@@ -1,8 +1,13 @@
 import React, { useEffect, useState } from "react";
 import ProgressBar from "./ProgressBar";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { changeFName, changeLName, changeGender, changeDob } from "../store/slices/UserSlice";
 
 export default function Intro() {
+
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
 
     const [fName, setFName] = useState(null);
     const [lName, setLName] = useState(null);
@@ -18,9 +23,13 @@ export default function Intro() {
 
     },[fName, lName, gender, dob])
 
-    const navigate = useNavigate();
 
     function handleSubmit(e) {
+
+        dispatch(changeFName(fName));
+        dispatch(changeLName(lName));
+        dispatch(changeGender(gender));
+        dispatch(changeDob(dob));
         navigate('/address');
     }
 
