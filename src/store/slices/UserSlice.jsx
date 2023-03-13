@@ -70,5 +70,5 @@ export const {
     changeEmail,
     changePhone,
     changeLanguage,
-    changeOccupation
+    changeOccupation,
 } = userSlice.actions;

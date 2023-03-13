@@ -10,8 +10,6 @@ function Success () {
         return state.users;
     })
 
-    // console.log("data: ", data);
-
     return (
         <div className="success-box">
             <h1>Your inputs are recorded as below</h1>

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import ProgressBar from "./ProgressBar";
 import { useDispatch } from "react-redux";
-import  { changeEmail, changePhone, changeLanguage, changeOccupation } from '../store/slices/UserSlice';
+import { changeEmail, changePhone, changeLanguage, changeOccupation } from '../store/slices/UserSlice';
 
 export default function Confirmation() {
 
@@ -38,10 +38,10 @@ export default function Confirmation() {
         navigate('/address');
     }
 
-    return(
+    return (
         <form action="#" className="form">
             <h1 className="text-center">Registration Form</h1>
-            <ProgressBar value="4"/>
+            <ProgressBar value="4" />
             <div className="form-step">
                 <div className="input-group">
                     <label>Email</label>
